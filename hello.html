@@ -20,10 +20,7 @@
 			<input type="range" v-model="b]e"/>
 			<div class="min1" :style="{width : width +'px',height : height + 'px',background:'rgb('+r+','+g+','+b+')' }"></div>
 		</div>
-		<div id="title">
-		<input type="text"  v-model="flag"/>
-			<p v-if="flag">你可以看到我</p>
-		</div>
+		
 	</body>
 </html>
 <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js"></script>
@@ -45,10 +42,5 @@
 		//template : "<p>{{two}}</p>"
 	})
 	
-	var app=new Vue({
-		el : '#title',
-		data : {
-			flag : true
-		}
-	})
+	
 </script>
