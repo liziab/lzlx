@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			
+			<div v-html="msg" :title="two"></div>
+			<input type="checkbox" v-bind:checked="flag"></input>
+			<input type="checkbox" name="" id=""  v-model="flag"/>
+			<input type="text" v-model="two" maxlength="20"/>还可以输入{{20-two.length}}个字
+			<input type="number" v-model="width" />
+			<input type="number" v-model="height" />
+			<input type="color" v-model="bg"/>
+			<div class="min" :style="{width : width +'px',height : height + 'px',background:bg }"></div>
+			<input type="range" v-model="r"/>
+			<input type="range" v-model="g"/>
+			<input type="range" v-model="b]e"/>
+			<div class="min1" :style="{width : width +'px',height : height + 'px',background:'rgb('+r+','+g+','+b+')' }"></div>
+		</div>
+		<div id="title">
+		<input type="text"  v-model="flag"/>
+			<p v-if="flag">你可以看到我</p>
+		</div>
+	</body>
+</html>
+<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js"></script>
+<script>
+	//console.log(Vue)
+	var vm=new Vue({
+		el : "#box",
+		data :{
+			msg : "<h1>hello</h1>",
+			two : "页面加载于"+ new Date().toLocaleString(),
+			flag: true,
+			width : 200,
+			height :200,
+			bg : "#ccc",
+			r : 0,
+			g : 0,
+			b :0
+		}
+		//template : "<p>{{two}}</p>"
+	})
+	
+	var app=new Vue({
+		el : '#title',
+		data : {
+			flag : true
+		}
+	})
+</script>
